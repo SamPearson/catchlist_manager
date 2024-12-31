@@ -13,6 +13,12 @@ class Todo(db.Model):
     title = db.Column(db.String(100))
     complete = db.Column(db.Boolean)
 
+# Create database and tables if they don't already exist
+with app.app_context():
+    print("Creating Database")
+    db.create_all()
+    print("Database Created")
+
 @app.route('/')
 def home():
     todo_list = Todo.query.all()
@@ -40,12 +46,7 @@ def delete(todo_id):
     db.session.commit()
     return redirect(url_for("home"))
 
-#Allows starting the server by running this file from python instead of running flask
+#Allows starting the server by running this script with python instead of flask or gunicorn commands
 if __name__ == "__main__":
-    with app.app_context():
-        print("Creating Database")
-        db.create_all()
-        print("Database Created")
-
     app.run(debug=True)
 
