@@ -15,12 +15,12 @@ in the sections below.
 ## Locally/Dev
 The following command will start the server locally
 
-`$ python app.py`
+`$ python webapp.py`
 
 ## Server/Prod
 The following command will start the server and bind it to domain/port
 
-`gunicorn --config gunicorn_config.py --workers 3 --bind 127.0.0.1:8000 app:app`
+`gunicorn --config gunicorn_config.py --workers 3 --bind 127.0.0.1:8000 webapp:app`
 
 The config file includes database initialization, app is the name of the 
 app.py file as well as the flask instance defined therein, hence app:app
