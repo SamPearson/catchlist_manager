@@ -1,18 +1,13 @@
 from flask import Flask, render_template, request, redirect, url_for
-from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import inspect
+
+from db_models import db, Todo
 
 app = Flask(__name__)
 
-# use /// for relative paths, //// for absolute
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-db = SQLAlchemy(app)
+app.config.from_object('db_config.Config')
+db.init_app(app)
 
-class Todo(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(100))
-    complete = db.Column(db.Boolean)
 
 # Needs to be a function so it can be called directly from the app or in a gunicorn config file
 def initialize_database():
