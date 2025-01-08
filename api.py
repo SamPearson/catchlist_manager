@@ -1,7 +1,6 @@
 from flask import Flask, request, jsonify
 from db_models import db, Todo
-from db_config import Config
-from local_config import initialize_database
+from db_config import Config, initialize_database
 
 app = Flask(__name__)
 app.config.from_object(Config)  # Use the shared config

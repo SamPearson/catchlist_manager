@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
-from local_config import initialize_database
-
+from db_config import initialize_database
 from db_models import db, Todo
 
 app = Flask(__name__)
