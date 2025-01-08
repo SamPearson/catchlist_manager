@@ -37,9 +37,9 @@ whatever you're serving at the target URL.
 
 To run the webapp:
 
-`gunicorn --config gunicorn_config.py --workers 3 --bind 127.0.0.1:8000 webapp:app`
+`gunicorn --config gunicorn_config_webapp.py --workers 3 --bind 127.0.0.1:8000 webapp:app`
 
 To run the API:
 
-`gunicorn --config gunicorn_config.py --workers 3 --bind 127.0.0.1:5001 api:app`
+`gunicorn --config gunicorn_config_api.py --workers 3 --bind 127.0.0.1:5001 api:app`
 
