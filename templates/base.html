@@ -14,29 +14,29 @@
     <div style="margin-top: 50px;" class="ui container">
         <h1 class="ui center aligned header">To Do App</h1>
 
-        <form class="ui form" action="/add" method="post">
+        <form class="ui form" action="/add" method="post" id="todo-entry-form">
             <div class="field">
                 <label>Todo Title</label>
-                <input type="text" name="title" placeholder="Enter Todo">
+                <input type="text" name="title" placeholder="Enter Todo" id="todo-entry-title">
                 <br>
-                <button class="ui blue button" type="submit">Add</button>
+                <button class="ui blue button" type="submit" id="todo-entry-add-button">Add</button>
             </div>
         </form>
 
         <hr>
 
         {% for todo in todo_list %}
-        <div class="ui segment">
-            <p class="ui big header">{{todo.id }} | {{ todo.title }}</p>
+        <div class="ui segment" data-testid="todo-display">
+            <p class="ui big header" data-testid="todo-display-header">{{todo.id }} | {{ todo.title }}</p>
 
                 {% if todo.complete == False %}
-                    <span class="ui gray label">Not Complete</span>
+                    <span class="ui gray label" data-testid="todo-display-completion">Not Complete</span>
                 {% else %}
-                    <span class="ui green label">Completed</span>
+                    <span class="ui green label" data-testid="todo-display-completion">Completed</span>
                 {% endif %}
 
-                <a class="ui blue button" href="/update/{{ todo.id }}">Update</a>
-                <a class="ui red button" href="/delete/{{ todo.id }}">Delete</a>
+                <a class="ui blue button" href="/update/{{ todo.id }}" data-testid="todo-display-update-button">Update</a>
+                <a class="ui red button" href="/delete/{{ todo.id }}" data-testid="todo-display-delete-button">Delete</a>
         </div>
         {% endfor %}
     </div>
