@@ -36,9 +36,27 @@
                 {% endif %}
 
                 <a class="ui blue button" href="/update/{{ todo.id }}" data-testid="todo-display-update-button">Update</a>
-                <a class="ui red button" href="/delete/{{ todo.id }}" data-testid="todo-display-delete-button">Delete</a>
+                <button class="ui red button" onclick="deleteTodo({{ todo.id }})" data-testid="todo-display-delete-button">Delete</button>
+
+
+
         </div>
         {% endfor %}
     </div>
+
+    <script>
+    function deleteTodo(todoId) {
+        fetch(`/delete/${todoId}`, { method: 'DELETE' })
+            .then(response => {
+                if (response.ok) {
+                    window.location.reload();  // Manually refresh the page
+                } else {
+                    alert("Failed to delete todo.");
+                }
+            })
+            .catch(error => console.error("Error deleting todo:", error));
+    }
+    </script>
+
 </body>
 </html>
