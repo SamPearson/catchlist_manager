@@ -31,14 +31,14 @@ def update(todo_id):
     return redirect(url_for("home"))
 
 
-@app.route("/delete/<int:todo_id>")
+@app.route("/delete/<int:todo_id>", methods=["DELETE"])
 def delete(todo_id):
     todo = Todo.query.filter_by(id=todo_id).first()
     if not todo:
         return "Todo not found", 404
     db.session.delete(todo)
     db.session.commit()
-    return redirect(url_for("home"))
+    return "", 204  # No Content response (DELETE success), reloading happens in javascript
 
 
 # Allows starting the server by running this script with the python3 command instead of flask or gunicorn commands
