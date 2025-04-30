@@ -58,11 +58,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{protocol}}://{{host}}{{port}}/api/auth/register",
+					"raw": "{{protocol}}://{{host}}:{{port}}/api/auth/register",
 					"protocol": "{{protocol}}",
 					"host": [
-						"{{host}}{{port}}"
+						"{{host}}"
 					],
+					"port": "{{port}}",
 					"path": [
 						"api",
 						"auth",
@@ -113,11 +114,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{protocol}}://{{host}}{{port}}/api/auth/login",
+					"raw": "{{protocol}}://{{host}}:{{port}}/api/auth/login",
 					"protocol": "{{protocol}}",
 					"host": [
-						"{{host}}{{port}}"
+						"{{host}}"
 					],
+					"port": "{{port}}",
 					"path": [
 						"api",
 						"auth",
@@ -211,11 +213,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{protocol}}://{{host}}{{port}}/api/todos",
+					"raw": "{{protocol}}://{{host}}:{{port}}/api/todos",
 					"protocol": "{{protocol}}",
 					"host": [
-						"{{host}}{{port}}"
+						"{{host}}"
 					],
+					"port": "{{port}}",
 					"path": [
 						"api",
 						"todos"
@@ -278,11 +281,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{protocol}}://{{host}}{{port}}/api/todos/{{todo_id}}",
+					"raw": "{{protocol}}://{{host}}:{{port}}/api/todos/{{todo_id}}",
 					"protocol": "{{protocol}}",
 					"host": [
-						"{{host}}{{port}}"
+						"{{host}}"
 					],
+					"port": "{{port}}",
 					"path": [
 						"api",
 						"todos",
@@ -340,11 +344,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{protocol}}://{{host}}{{port}}/api/todos",
+					"raw": "{{protocol}}://{{host}}:{{port}}/api/todos",
 					"protocol": "{{protocol}}",
 					"host": [
-						"{{host}}{{port}}"
+						"{{host}}"
 					],
+					"port": "{{port}}",
 					"path": [
 						"api",
 						"todos"
@@ -431,11 +436,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{protocol}}://{{host}}{{port}}/api/todos/{{todo_id}}",
+					"raw": "{{protocol}}://{{host}}:{{port}}/api/todos/{{todo_id}}",
 					"protocol": "{{protocol}}",
 					"host": [
-						"{{host}}{{port}}"
+						"{{host}}"
 					],
+					"port": "{{port}}",
 					"path": [
 						"api",
 						"todos",
@@ -487,11 +493,12 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "{{protocol}}://{{host}}{{port}}/api/todos/{{todo_id}}",
+					"raw": "{{protocol}}://{{host}}:{{port}}/api/todos/{{todo_id}}",
 					"protocol": "{{protocol}}",
 					"host": [
-						"{{host}}{{port}}"
+						"{{host}}"
 					],
+					"port": "{{port}}",
 					"path": [
 						"api",
 						"todos",
@@ -532,6 +539,13 @@
 						"type": "text/javascript",
 						"packages": {}
 					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"packages": {},
+						"type": "text/javascript"
+					}
 				}
 			],
 			"request": {
@@ -548,11 +562,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{protocol}}://{{host}}{{port}}/api/todos/{{todo_id}}",
+					"raw": "{{protocol}}://{{host}}:{{port}}/api/todos/{{todo_id}}",
 					"protocol": "{{protocol}}",
 					"host": [
-						"{{host}}{{port}}"
+						"{{host}}"
 					],
+					"port": "{{port}}",
 					"path": [
 						"api",
 						"todos",
@@ -628,11 +643,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{protocol}}://{{host}}{{port}}/api/auth/delete-account",
+					"raw": "{{protocol}}://{{host}}:{{port}}/api/auth/delete-account",
 					"protocol": "{{protocol}}",
 					"host": [
-						"{{host}}{{port}}"
+						"{{host}}"
 					],
+					"port": "{{port}}",
 					"path": [
 						"api",
 						"auth",
